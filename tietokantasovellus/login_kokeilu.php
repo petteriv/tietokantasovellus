@@ -5,21 +5,21 @@ random testailua kopioidulla koodilla-->
 
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
 <tr>
-<form name="form1" method="post" action="checklogin.php">
+<form name="form1" method="post" action="kayttajanLisays.php">
 <td>
 <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
 <tr>
-<td colspan="3"><strong>Member Login </strong></td>
+<td colspan="3"><strong>Sisäänkirjautuminen</strong></td>
 </tr>
 <tr>
-<td width="78">Username</td>
+<td width="78">Käyttäjänimi</td>
 <td width="6">:</td>
-<td width="294"><input name="myusername" type="text" id="myusername"></td>
+<td width="294"><input name="Kayttajanimi" type="text" id="Kayttajanimi"></td>
 </tr>
 <tr>
-<td>Password</td>
+<td>Salasana</td>
 <td>:</td>
-<td><input name="mypassword" type="text" id="mypassword"></td>
+<td><input name="Salasana" type="text" id="Salasana"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
