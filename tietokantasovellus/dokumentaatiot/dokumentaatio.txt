@@ -1,0 +1,34 @@
+Tietokantasovellus-dokumentaatio
+(muokkaan myöhemmin mukavamman näköiseen muotoon, elkää hikeentykö)
+
+1.Johdanto
+
+Tarkoituksena on tehdä web-sovellus keräilykorttien vaihtoa ja tilastoimista varten.
+Järjestelmän ylläpitäjä pitää huolen että korttilistat ovat ajan tasalla.
+Tavalliset käyttäjät voivat kirjautua sisään ja luoda oman korttitilastonsa.
+Muutin toiminnallisuutta rajautuen käyttäjän pystyvän selaamaan ja lisäämään omia korttejansa, 
+sekä korttitietokantaa.
+
+
+Ohjelma kirjoitetaan lähinnä PHP:lla.
+
+
+
+2.Käyttötapaukset.
+
+Uusi käyttäjä.
+	Rekisteröityminen. 
+	Uusi käyttäjä voi rekisteröityä järjestelmään, jolloin käyttäjälle luodaan tili.
+	Tiliin littyvät käyttäjänimi, salasana, sekä oma korttilista.
+
+Vanha käyttäjä
+	Oman korttilistan päivittäminen.
+	Vanha käyttäjä voi lisätä omistamiensa korttien listaan lisää kortteja tai poistaa niitä.
+	Käyttäjän tulee olla kirjautunut sisään.
+	
+	Vanha käyttäjä voi selata koko järjestelmässä olevaa korttilistaa, tai niitä kortteja joita hän itse omistaa.
+
+Ylläpitäjä
+	Ylläpitäjä voi myös selata koko korttilistaa, sekä poistaa ja lisätä korttilistaan kortteja.
+	Ylläpitäjä voi myös poistaa käyttäjiä järjestelmästä.
+

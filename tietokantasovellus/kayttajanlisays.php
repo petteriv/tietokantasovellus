@@ -17,5 +17,8 @@ $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));
 
 ?>
 <p> käyttäjän lisäys onnistui</p>
+<form action ="korttienLisays.html">
+        <input type="submit" value="Jatka sivulle">    
+        </form>
 
 
