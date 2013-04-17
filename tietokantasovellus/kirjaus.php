@@ -11,7 +11,7 @@ try {
     die("VIRHE: " . $e->getMessage());
 }
 
-echo 'edes jotakin?';
+echo 'ei toimi fiäl';
 
     $kysely = $yhteys->prepare('SELECT id FROM kayttajat WHERE nimi = ? AND salasana = ?');
      $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));
@@ -20,7 +20,7 @@ echo 'edes jotakin?';
     $kayttaja = $kysely;
     
 
-    echo "id on: $kayttaja";
+//    echo "id on: $kayttaja";
     
  
 
