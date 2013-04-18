@@ -1,13 +1,20 @@
 <?php
+require_once 'yhteys.php';
+require_once 'ohjaus.php';
 
-// yhteyden muodostus tietokantaan
-try {
-    $yhteys = new PDO("pgsql:host=localhost;dbname=petteriv",
-                      "petteriv", "b9f87604b2334db8");
-} catch (PDOException $e) {
-    die("VIRHE: " . $e->getMessage());
+
+if(strlen($_POST["nimi"])< 4){
+    $session->kayttajanimiliianlyhyt;
+    ohjaa("uusikayttaja.php");
+    
+    die();
+    
 }
-
+if(strlen($_POST["salasana"])< 4){
+    $session->salasanaliianlyhyt;
+    ohjaa("uusikayttaja.php");
+    die();
+}
 
 
 $kysely = $yhteys->prepare("INSERT INTO kayttajat (nimi, salasana) VALUES (?, ?)");
@@ -17,7 +24,7 @@ $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));
 
 ?>
 <p> käyttäjän lisäys onnistui</p>
-<form action ="korttienLisays.html">
+<form action ="korttilista.php">
         <input type="submit" value="Jatka sivulle">    
         </form>
 

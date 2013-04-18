@@ -1,7 +1,7 @@
 <?php
 
 require_once 'session.php';
-session_start();
+
 
 
 
@@ -14,6 +14,17 @@ session_start();
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+        <p>Kirjaudu sisään tai rekisteröidy uutena käyttäjänä</p>
+        <?php
+        if($session->kirjautumisvirhe){
+            echo "Käyttäjätunnus tai salasana väärin";
+            unset($session->kirjautumisvirhe);
+        }
+        
+        
+        
+        ?>
+        
         <form action="kirjaus.php" method="post">
         <p>Nimi: <br>
         <input type="text" name="nimi" id ="nimi"></p>
@@ -22,7 +33,7 @@ session_start();
         <input type="submit" value="Kirjaudu">
         </form>
         
-        <form action ="kayttajanlisays.html">
+        <form action ="uusikayttaja.php">
         <input type="submit" value="Uusi käyttäjä">    
         </form>
     </body>

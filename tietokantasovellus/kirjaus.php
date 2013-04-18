@@ -2,23 +2,24 @@
 
 require_once 'ohjaus.php';
 require_once 'session.php';
-session_start();  
- 
-try {
-    $yhteys = new PDO("pgsql:host=localhost;dbname=petteriv",
-                      "petteriv", "b9f87604b2334db8");
-} catch (PDOException $e) {
-    die("VIRHE: " . $e->getMessage());
-}
+require_once 'yhteys.php'; 
+
 
 echo 'ei toimi fiäl';
 
     $kysely = $yhteys->prepare('SELECT id FROM kayttajat WHERE nimi = ? AND salasana = ?');
-     $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));
+    $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));
+    if($rivi = $kysely->fetch()){
       
 
-    $kayttaja = $kysely;
+    $kayttaja = $rivi["id"];
     
+    $session->kayttaja_id = $kayttaja;
+    header("Location: korttilista.php");
+    }else{
+        $session->kirjautumisvirhe = true;
+        header("Location: index.php");
+    }
 
 //    echo "id on: $kayttaja";
     
