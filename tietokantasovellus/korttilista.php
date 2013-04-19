@@ -7,7 +7,7 @@ require_once 'ohjaus.php';
 require_once 'yhteys.php';
 kirjautumisenvarmistus();
     
-    $kysely = $yhteys->prepare('SELECT * FROM kortit13');
+    $kysely = $yhteys->prepare('SELECT * FROM kortti');
     $kysely->execute();
     
     echo "Kaikki tietokannan kortit";
@@ -29,5 +29,9 @@ kirjautumisenvarmistus();
 ?>
 
 <form action="korttienLisays.html" method="post">
-<input type="submit" value="Lisää kortteja listaan">
+<input type="submit" value="Omat listat">
+ </form>
+
+<form action="uusikorttilista.php" method="post">
+<input type="submit" value="Luo oma lista">
  </form>

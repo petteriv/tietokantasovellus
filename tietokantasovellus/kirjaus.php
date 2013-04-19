@@ -5,7 +5,7 @@ require_once 'session.php';
 require_once 'yhteys.php'; 
 
 
-echo 'ei toimi fiäl';
+
 
     $kysely = $yhteys->prepare('SELECT id FROM kayttajat WHERE nimi = ? AND salasana = ?');
     $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));

@@ -1,8 +1,15 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
+<?php
+require_once 'session.php';
+require_once 'ohjaa.php';
+kirjautumisenvarmistus();
+
+if($session->listanluontionnistui = true){
+    echo "Uuden listan luonti onnistui";
+    unset($session->listanluontionnistui);
+}
+?>
+
+
 <html>
     <head>
         <title></title>
@@ -13,9 +20,9 @@ and open the template in the editor.
         <p>Nimi: <br>
         <input type="text" name="nimi"></p>
         <p>Väri: <br>
-        <input type="text" name="väri"></p>
+        <input type="text" name="vari"></p>
         <p>Manacost: <br>
-        <input type="text" name="manacost"></p>
+        <input type="Integer" name="manacost"></p>
         <p>Tyyppi: <br>
         <input type="text" name="tyyppi"></p>
         <p>Setti: <br>

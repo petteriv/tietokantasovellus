@@ -1,7 +1,9 @@
 <?php
+require_once 'session.php';
+require_once 'ohjaus.php';
+kirjautumisenvarmistus();
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+$kysely = $yhteys->prepare("SELECT * FROM omistus WHERE ")
+
+
 ?>
