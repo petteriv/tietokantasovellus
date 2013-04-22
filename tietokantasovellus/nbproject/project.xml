@@ -9,10 +9,14 @@
             <word>Kayttajanimi</word>
             <word>käyttäjä</word>
             <word>Käyttäjänimi</word>
+            <word>Manacost</word>
             <word>Nimi</word>
             <word>Salasana</word>
+            <word>Setti</word>
             <word>Sisäänkirjautuminen</word>
+            <word>Tyyppi</word>
             <word>Uusi</word>
+            <word>Väri</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

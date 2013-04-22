@@ -1,4 +1,5 @@
 <?php
+require_once 'session.php';
 require_once 'yhteys.php';
 require_once 'ohjaus.php';
 

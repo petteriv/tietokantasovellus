@@ -1,12 +1,17 @@
 <?php
 require_once 'session.php';
-require_once 'ohjaa.php';
+require_once 'ohjaus.php';
 kirjautumisenvarmistus();
 
-if($session->listanluontionnistui = true){
-    echo "Uuden listan luonti onnistui";
-    unset($session->listanluontionnistui);
-}
+//if($session->listanluontionnistui){
+//    echo 'Uuden listan luonti onnistui';
+//    unset($session->listanluontionnistui);
+//}
+//if($session->kortintiedotpuutteelliset){
+//    echo 'Kortin tiedot puutteeliset';
+//    unset($session->kortintiedotpuutteelliset);
+//}
+
 ?>
 
 
@@ -22,7 +27,7 @@ if($session->listanluontionnistui = true){
         <p>Väri: <br>
         <input type="text" name="vari"></p>
         <p>Manacost: <br>
-        <input type="Integer" name="manacost"></p>
+        <input type="text" name="manacost"></p>
         <p>Tyyppi: <br>
         <input type="text" name="tyyppi"></p>
         <p>Setti: <br>

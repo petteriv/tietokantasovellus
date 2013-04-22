@@ -7,7 +7,7 @@ require_once 'ohjaus.php';
 require_once 'yhteys.php';
 kirjautumisenvarmistus();
     
-    $kysely = $yhteys->prepare('SELECT * FROM kortti');
+    $kysely = $yhteys->prepare('SELECT * FROM kortit');
     $kysely->execute();
     
     echo "Kaikki tietokannan kortit";
@@ -15,7 +15,7 @@ kirjautumisenvarmistus();
     while ($row = $kysely->fetch()) {
         echo "<tr>";
         echo "<td>" . $row["nimi"] ."</td>";
-        echo "<td>" . $row["väri"] ."</td>";
+        echo "<td>" . $row["vari"] ."</td>";
         echo "<td>" . $row["manacost"] ."</td>";
         echo "<td>" . $row["tyyppi"] ."</td>";
         echo "<td>" . $row["setti"] ."</td>";
@@ -28,7 +28,7 @@ kirjautumisenvarmistus();
 
 ?>
 
-<form action="korttienLisays.html" method="post">
+<form action="omatkortit.php" method="post">
 <input type="submit" value="Omat listat">
  </form>
 
