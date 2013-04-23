@@ -26,7 +26,7 @@ $kysely->execute();
 
 echo "<table border>";
 while($kortit = $kysely->fetch()){
-    $kortinid = $kortit["id"];
+    $kortinid = $kortit["kortti"];
     $kyselye = $yhteys->prepare("SELECT * FROM kortit WHERE id = $kortinid");
     $kyselye->execute();
         echo "<table border>";

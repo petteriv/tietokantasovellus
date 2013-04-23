@@ -12,6 +12,11 @@ function onkokirjautunut() {
     return isset($session->kayttaja_id);
 }
 
+function kirjauduulos() {
+    global $session;
+    unset($session->kayttaja_id);
+}
+
 function kirjautumisenvarmistus() {
     if(!onkokirjautunut()){
         ohjaa('index.php');

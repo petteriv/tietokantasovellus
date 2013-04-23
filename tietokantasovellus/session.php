@@ -9,6 +9,10 @@ class Session {
         return isset($_SESSION[$key]);
     }
     
+    public function __unset($name) {
+        unset($_SESSION[$name]);
+    }
+    
     public function __set($key, $value) {
         $_SESSION[$key] = $value;
     }

@@ -46,18 +46,18 @@ kirjautumisenvarmistus();
         $kysely3 = $yhteys->prepare("SELECT * FROM kortit WHERE id = $id");
         $kysely3->execute();
         $kortti = $kysely3->fetch();
-//        echo "$id";
-//        echo "<table border>";
-//        while ( $kortit = $kysely3->fetch()) {
-//            echo "<tr>";
-//            echo "<td>" . $kortit["nimi"] . "</td>";
-//            echo "<td>" . $kortit["vari"] . "</td>";
-//            echo "<td>" . $kortit["manacost"] . "</td>";
-//            echo "<td>" . $kortit["tyyppi"] . "</td>";
-//            echo "<td>" . $kortit["setti"] . "</td>";
-//            echo "</tr>";
-//        }
-//        echo "</table>";
+        echo "$id";
+        echo "<table border>";
+        while ( $kortit = $kysely3->fetch()) {
+            echo "<tr>";
+            echo "<td>" . $kortit["nimi"] . "</td>";
+            echo "<td>" . $kortit["vari"] . "</td>";
+            echo "<td>" . $kortit["manacost"] . "</td>";
+            echo "<td>" . $kortit["tyyppi"] . "</td>";
+            echo "<td>" . $kortit["setti"] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
 //        
 //        
 //

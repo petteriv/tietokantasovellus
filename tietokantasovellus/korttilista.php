@@ -35,3 +35,7 @@ kirjautumisenvarmistus();
 <form action="uusikorttilista.php" method="post">
 <input type="submit" value="Luo oma lista">
  </form>
+
+<form action="uloskirjaus.php" method="post">
+<input type="submit" value="kirjaudu ulos">    
+</form>

@@ -31,5 +31,9 @@ require_once 'session.php';
         <input type="text" name="salasana"></p>
         <input type="submit" value="Uusi käyttäjä">
         </form>
+        
+        <form action="index.php" method="post">
+        <input type="submit" value="Etusivu">    
+        </form>
     </body>
 </html>
