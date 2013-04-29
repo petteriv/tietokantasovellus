@@ -3,7 +3,9 @@ require_once 'session.php';
 require_once 'yhteys.php';
 require_once 'ohjaus.php';
 
-
+/**
+ * tarkistetaan onko syötetty liian lyhyttä salasanaa tai käyttäjänimeä
+ */
 if(strlen($_POST["nimi"])< 4){
     $session->kayttajanimiliianlyhyt;
     ohjaa("uusikayttaja.php");
@@ -16,10 +18,14 @@ if(strlen($_POST["salasana"])< 4){
     ohjaa("uusikayttaja.php");
     die();
 }
-
+/**
+ * luodaan yhteys tietokantaan ja lisätään käyttäjä sinne.
+ */
 
 $kysely = $yhteys->prepare("INSERT INTO kayttajat (nimi, salasana) VALUES (?, ?)");
 $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));
+
+
 
 
 

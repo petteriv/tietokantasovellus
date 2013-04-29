@@ -5,7 +5,9 @@ require_once 'session.php';
 require_once 'yhteys.php'; 
 
 
-
+    /**
+     * Tarkistetaan onko annettua käyttäjänimeä tai salasanaa tietokannassa
+     */
 
     $kysely = $yhteys->prepare('SELECT id FROM kayttajat WHERE nimi = ? AND salasana = ?');
     $kysely->execute(array($_POST["nimi"], $_POST["salasana"]));

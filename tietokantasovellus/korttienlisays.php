@@ -4,17 +4,21 @@ require_once 'ohjaus.php';
 require_once 'session.php';
 kirjautumisenvarmistus();
 
-
+/**
+ * mikäli jokin arvoista on väärin, ohjataan takaisin korttienlisäämiseen
+ */
 
         if(strlen($_POST["nimi"])<1 || strlen($_POST["vari"])<1 
                 || strlen($_POST["manacost"])<1 || strlen($_POST["tyyppi"])<1
                 || strlen($_POST["setti"])<1){
             
             
-            ohjaa(index.php);
+            ohjaa(korttienlisaaminen.php);
             die();
         }
-
+/**
+ * lisätään kortti tietokantaan
+ */
 
         $kyselyt = $yhteys->prepare("INSERT INTO kortit 
             (nimi, vari, manacost, tyyppi, setti) VALUES (?,?,?,?,?)");
@@ -24,43 +28,29 @@ kirjautumisenvarmistus();
         
        echo "Kortin lisääminen onnistui";
        
-
+/**
+ * etsitään käyttäjän omistama lista
+ */
         $kysely2 = $yhteys->prepare("SELECT * FROM lista WHERE omistaja = 
         $session->kayttaja_id");
         $kysely2->execute();
        
-//        echo "<table border>";
-//        while ( $lista = $kysely2->fetch()) {
-//            echo "<tr>";
-//            echo "<td>" . $lista["id"] . "</td>";
-//            echo "<td>" . $lista["omistaja"] . "</td>";
-//            echo "</tr>";
-//        }
-//        echo "</table>";
+
         $lista =$kysely2->fetch();
         $listaid = $lista["id"];
 
-        
+        /**
+         * etsitään korttilistasta äsken lisätty kortti
+         */
         
         $id = $yhteys->lastInsertId("kortit_id_seq");
         $kysely3 = $yhteys->prepare("SELECT * FROM kortit WHERE id = $id");
         $kysely3->execute();
         $kortti = $kysely3->fetch();
-        echo "$id";
-        echo "<table border>";
-        while ( $kortit = $kysely3->fetch()) {
-            echo "<tr>";
-            echo "<td>" . $kortit["nimi"] . "</td>";
-            echo "<td>" . $kortit["vari"] . "</td>";
-            echo "<td>" . $kortit["manacost"] . "</td>";
-            echo "<td>" . $kortit["tyyppi"] . "</td>";
-            echo "<td>" . $kortit["setti"] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-//        
-//        
-//
+
+/**
+ * lisätään omistus-tauluun käyttäjän lista ja äsken lisätty kortti
+ */
         $kysely4 = $yhteys->prepare("INSERT INTO omistus (lista, kortti) VALUES ($listaid,$id)");
         $kysely4->execute();
         

@@ -15,14 +15,24 @@ kirjautumisenvarmistus();
         </form>
 
 <?php
+/**
+ * haetaan käyttäjän lista
+ */
+
 $apukysely = $yhteys->prepare("SELECT * FROM lista WHERE omistaja = $session->kayttaja_id");
 $apukysely->execute();
 $lista = $apukysely->fetch();
 $listanid =$lista["id"];
+/**
+ * haetaan kaikki omistukset, joissa on parametrinä käyttäjän lista
+ */
 
 $kysely = $yhteys->prepare("SELECT * FROM omistus WHERE lista = $listanid");
 $kysely->execute();
 
+/**
+ * tulostetaan taulukkona kaikki käyttäjän listan kortit
+ */
 
 echo "<table border>";
 while($kortit = $kysely->fetch()){

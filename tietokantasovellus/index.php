@@ -1,10 +1,5 @@
 <?php
-
 require_once 'session.php';
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -15,12 +10,17 @@ require_once 'session.php';
     </head>
     <body>
         <p>Kirjaudu sisään tai rekisteröidy uutena käyttäjänä</p>
+ 
         <?php
         if($session->kirjautumisvirhe){
             echo "Käyttäjätunnus tai salasana väärin";
             unset($session->kirjautumisvirhe);
         }
-        
+        /**
+         * Ohjelman etusivu, tarjoaa lomakkeen jonka avulla 
+         * voidaan kirjautua sisään. MIkäli sisäänkirjautuminen epäonnistuu,
+         * annetaan virheilmoitus
+         */
         
         
         ?>

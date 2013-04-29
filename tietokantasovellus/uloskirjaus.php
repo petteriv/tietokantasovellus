@@ -6,11 +6,8 @@ require_once 'ohjaus.php';
 kirjauduulos();
 header("Location: index.php");
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * kirjaa käyttäjän ulos
+ * 
  */
 ?>
-<form>
-    <form action="index.php" method="post">
-    <input type="submit" value="Etusivu">
-    </form>
+

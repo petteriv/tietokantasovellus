@@ -3,15 +3,10 @@ require_once 'session.php';
 require_once 'ohjaus.php';
 kirjautumisenvarmistus();
 
-//if($session->listanluontionnistui){
-//    echo 'Uuden listan luonti onnistui';
-//    unset($session->listanluontionnistui);
-//}
-//if($session->kortintiedotpuutteelliset){
-//    echo 'Kortin tiedot puutteeliset';
-//    unset($session->kortintiedotpuutteelliset);
-//}
-
+/**
+ * varmistetaan käyttäjän olevan kirjautunut. Sivu tarjoaa lomakkeen uuden 
+ * kortin syöttämiselle tietokantaan
+ */
 ?>
 
 

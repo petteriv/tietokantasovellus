@@ -13,6 +13,11 @@ require_once 'session.php';
         <p>Käyttäjänimen ja salasanan on oltava vähintään 4 merkkiä pitkiä</p>
         
         <?php
+        
+        /**
+         * lomake jonka avulla voidaan antaa arvot uudelle käyttäjälle
+         * mikäli arvot ovat väärin, annetaan virheilmoitus
+         */
             if($session->kayttajanimiliianlyhyt){
             echo "Käyttäjänimi on liian lyhyt";
             unset($session->kayttajanimiliianlyhyt);

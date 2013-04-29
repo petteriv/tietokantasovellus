@@ -7,6 +7,10 @@ require_once 'ohjaus.php';
 require_once 'yhteys.php';
 kirjautumisenvarmistus();
     
+    /**
+     * haetaan kaikki kortit ja tulostetaan ne
+     */
+
     $kysely = $yhteys->prepare('SELECT * FROM kortit');
     $kysely->execute();
     
